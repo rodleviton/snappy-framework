@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html ng-app="snappy">
+<html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title>Snappy Framework</title>
     <link href="/app.css" rel="stylesheet">
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400italic,400,700,300' rel='stylesheet' type='text/css'>
   </head>
-  <body>
-    <h1>Snappy Framework</h1>
+  <body ng-app="snappy">
 
     <div ui-view></div>
 
     <script src="/bower_components/angular/angular.js"></script>
     <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 
-    <!-- Snapp Framework -->
+    <!-- Snappy Framework -->
     <script src="/app.js"></script>
     <script src="/main/main-controller.js"></script>
+    <script src="/components/profile/profile-directive.js"></script>
+    <script src="/components/profile/profile-service.js"></script>
   </body>
 </html>

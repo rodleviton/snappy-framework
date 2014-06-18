@@ -5,3 +5,5 @@
 .env.php
 .DS_Store
 Thumbs.db
+*.sublime-workspace
+*.sublime-project
