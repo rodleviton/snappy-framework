@@ -42,5 +42,9 @@
 @import "utilities/utilities";
 @import "utilities/responsive-utilities";
 
+// Libs
+@import "libs/fontawesome";
+
 // Directive Components
 @import "../../components/profile/profile";
+@import "../../components/follow-button/follow-button";

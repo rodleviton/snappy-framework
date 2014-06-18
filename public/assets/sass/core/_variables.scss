@@ -1,6 +1,11 @@
 @import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/variables";
 
 // ------------------------------------------------
+// Colour Pallete
+// ------------------------------------------------
+$brand-primary: #66cccc;
+
+// ------------------------------------------------
 // Typography
 // ------------------------------------------------
 $font-size-base:          16px;
@@ -8,6 +13,13 @@ $font-family-sans-serif:  "Open Sans", sans-serif;
 
 $headings-font-family:    $font-family-sans-serif;
 $headings-font-weight:    700;
+
+// ------------------------------------------------
+// Buttons
+// ------------------------------------------------
+$btn-primary-color:              #fff;
+$btn-primary-bg:                 $brand-primary;
+$btn-primary-border:             darken($btn-primary-bg, 5%);
 
 // ------------------------------------------------
 // Scaffolding
