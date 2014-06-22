@@ -1,0 +1,40 @@
+.summary-nav {
+    .navbar {
+        margin: 20px 0;
+
+        ul {
+            margin: 0;
+            width: 100%;
+
+            li {
+                float: left;
+                width: 33.333%;
+
+                a {
+                    text-transform: uppercase;
+                    display: block;
+                    text-align: center;
+                    @include clearfix;
+                    padding: 15px 0 12px 0;
+                    font-weight: 300;
+                    font-size: 1em; // 16px
+                    border-bottom: 3px solid #fff;
+
+                    &:hover {
+                        border-color: $brand-primary;
+                    }
+                }
+
+                strong {
+                    margin-top: 2px;
+                    font-size: 1em;
+                    clear: both;
+                    float: left;
+                    text-align: center;
+                    width: 100%;
+                    font-weight: 800;
+                }
+            }
+        }
+    }
+}

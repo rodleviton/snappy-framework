@@ -1,5 +1,13 @@
 @import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/grid";
 
+.col-xs-12 {
+
+    @media (min-width: $screen-sm-min) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
 .col-xs-12.col-side {
     padding-left: 0;
     padding-right: 0;

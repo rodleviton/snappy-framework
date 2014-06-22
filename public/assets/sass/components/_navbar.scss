@@ -1,1 +1,51 @@
 @import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/navbar";
+
+.navbar {
+    background: #fff;
+    border: 1px solid #eee;
+
+     .btn {
+        padding: 14px;
+     }
+}
+
+// Branding
+.navbar-brand {
+    background: url('images/logo.png');
+    text-indent: -999999em;
+    display: block;
+    width: (157px / 2);
+    height: (67px / 2);
+    background-size: 100%;
+    position: absolute;
+    left: 50%;
+    margin-left: -39px;
+    top: 50%;
+    margin-top: -17px;
+}
+
+// Navbar Toggle
+.navbar-toggle {
+    border: none;
+    float: left;
+    @include border-left-radius(0);
+    @include border-right-radius(0);
+    padding: 18px;
+    margin: 0;
+
+    &:hover {
+        background-color: #fff;
+    }
+
+    &:focus {
+      background-color: #f3f3f3;
+    }
+
+    &:active {
+        @include box-shadow(inset 0 0 5px rgba(0,0,0,.125));
+    }
+
+    .icon-bar {
+      background-color: $gray-light;
+    }
+}

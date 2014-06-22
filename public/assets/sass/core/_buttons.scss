@@ -5,17 +5,41 @@
 
 .btn {
   border: none;
-  @include button-size($padding-base-vertical, $padding-base-horizontal, $font-size-base, $line-height-base, 0);
+  @include button-size(8px, $padding-base-horizontal, $font-size-base, $line-height-base, 0);
 
   &:hover,
   &:focus {
+    outline: 0 !important;
     color: #fff;
+    @include box-shadow(none);
   }
 
   &:active,
   &.active {
     outline: 0;
     background-image: none;
-    @include box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
+    @include box-shadow(inset 0 0 5px rgba(0,0,0,.125));
+  }
+}
+
+.btn.btn-icon {
+  width: 58px;
+  font-size: 1em;
+}
+
+.btn.btn-default {
+  color: $gray-light;
+
+  &:hover {
+    background: none;
+  }
+
+  &:focus {
+    background: $gray-lighter;
+    outline: none;
+  }
+
+  &:active {
+    @include box-shadow(inset 0 0 5px rgba(0,0,0,.125));
   }
 }

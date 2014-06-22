@@ -1,24 +1,113 @@
-.profile {
-    h4 {
-        font-size: ceil(($font-size-base * 1.5)); // ~24px
-        margin-bottom: 5px;
-    }
+.list-feed {
 
-    h5 {
-        font-weight: 300;
-        font-size: 1em; // ~16px
-        margin-top: 0;
-    }
+    .list-feed-post {
+        width: 100%;
+        padding: 10px 0;
 
-    .profile-details {
-        margin-left: 170px;
-    }
+        hr {
+            border-top: 1px solid #fff;
+            margin-top: 30px;
+        }
 
-    .profile-image {
-        width: 140px;
-        float: left;
-        margin: -80px 0 0 15px;
-        position: relative;
-        z-index: 5;
+        .img-thumbnail {
+            float: left;
+        }
+
+        .item-media {
+            background: #fff;
+            padding: 10px;
+            margin-bottom: 20px;
+
+            .caption {
+                padding: 10px 0;
+            }
+        }
+
+        // Meta
+        .item-meta {
+            margin-bottom: 15px;
+
+            h5 {
+                margin: 0 0 0 50px;
+            }
+
+            .item-meta-left {
+                float: left;
+                width: 50%;
+            }
+
+            .item-meta-right {
+                float: right;
+                width: 50%;
+                text-align: right;
+            }
+        }
+
+        // Fields
+        .item-location {
+            margin: 0 0 0 50px;
+            font-size: 0.6875em; // 11px
+            font-weight: 300;
+            line-height: 1.75em;
+
+            .fa-map-marker {
+                font-size: 1.25em;
+            }
+        }
+
+        .item-creation-date {
+            font-size: 0.6875em; // 11px
+            font-weight: 300;
+            line-height: 1.75em;
+
+            .fa-clock-o {
+                font-size: 1.25em;
+                padding-right: 4px;
+            }
+        }
+
+        // Comments
+        .comment {
+            width: 100%;
+            margin-bottom: 10px;
+
+            .arrow-left {
+                width: 0;
+                height: 0;
+                border-top: 8px solid transparent;
+                border-bottom: 8px solid transparent;
+                border-right:10px solid $brand-primary;
+                z-index: 10;
+                position: absolute;
+                left: -10px;
+            }
+
+            .item-meta {
+                margin-bottom: 0;
+            }
+
+            .comment-content {
+                position: relative;
+                background: $brand-primary;
+                padding: 10px;
+                color: #fff;
+                margin-left: 60px;
+
+                h6 {
+                    color: #fff;
+                    margin: 0;
+                    font-size: 1em;
+                    font-weight: 300;
+                }
+
+                p {
+                    font-size: 0.875em; // ~14px
+                }
+            }
+
+            .profile-thumbnail {
+                width: 40px;
+            }
+        }
     }
 }

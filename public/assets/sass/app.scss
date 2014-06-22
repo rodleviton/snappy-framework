@@ -46,5 +46,8 @@
 @import "libs/fontawesome";
 
 // Directive Components
-@import "../../components/profile/profile";
+@import "../../components/profile-masthead/profile-masthead";
+@import "../../components/profile-basic/profile-basic";
 @import "../../components/follow-button/follow-button";
+@import "../../components/summary-nav/summary-nav";
+@import "../../components/feed/feed";

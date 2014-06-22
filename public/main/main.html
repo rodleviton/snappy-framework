@@ -1,31 +1,17 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-xs-12 col-sm-6 col-side">
-            <button class="btn btn-primary btn-follow">Follow <span class="fa fa-plus"></span></button>
-            <profile></profile>
+
+        <!-- Left Column -->
+        <div class="col-xs-12 col-sm-5 col-side">
+            <profile-masthead src="/images/background.jpg"></profile-masthead>
+            <profile-basic></profile-basic>
+            <follow-button></follow-button>
+            <summary-nav></summary-nav>
         </div>
-    </div>
-</div>
 
-<div class="list-group">
-    <div class="list-group-item" ng-repeat="item in items">
-        <img class="img-circle" width="40" ng-src="{{item.user.profile_picture}}" />
-
-        <h5>{{item.user.full_name}}</h4>
-        <div>
-            <span>Latitude: {{item.location.latitude}}</span>Longitude: {{item.location.longitude}}<span>
-        <div>
-        <div>Created at: {{item.created_time}}</div>
-        <img class="img-responsive" ng-src="{{item.images.standard_resolution.url}}" />
-        <caption>{{item.caption.text}}</caption>
-
-        <div>Likes: {{item.likes.count}}</div>
-        <div>Comments: {{item.comments.count}}</div>
-        <div ng-repeat="comment in items.comments.data">
-            <img ng-src="{{comment.from.profile_picture}}" />
-            <div>{{comment.from.full_name}}</div>
-            <div>Created at: {{comment.created_time}}</div>
-            <div>{{comment.text}}</div>
+        <!-- Main Column -->
+        <div class="col-xs-12 col-sm-7">
+            <feed></feed>
         </div>
 
     </div>

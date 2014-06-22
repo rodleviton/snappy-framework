@@ -1,10 +1,50 @@
-<div class="profile">
-    <div class="profile-cover-image">
-        <img class="img-responsive" ng-src="/components/profile/images/background.jpg" />
-    </div>
-    <img class="profile-image img-thumbnail" ng-src="{{user.profile_picture}}" />
-    <div class="profile-details">
-        <h4>{{user.full_name}}</h4>
-        <h5>{{user.bio}}</h5>
+<div class="list-group list-feed">
+    <div class="list-feed-post list-group-item" ng-repeat="item in feed">
+
+        <div class="item-meta clearfix">
+
+            <div class="item-meta-left">
+                <img class="img-thumbnail img-thumbnail-small" width="40" ng-src="{{item.user.profile_picture}}" image-load />
+                <h5>{{item.user.full_name}}</h5>
+
+                <div class="item-location">
+                    <span class="fa fa-map-marker map-marker"></span> Eltham, Victoria
+                    <!-- <geocoder geocoder-latitude="{{item.location.latitude}}" geocoder-longitude="{{item.location.longitude}}"></geocoder> -->
+                </div>
+            </div>
+
+            <div class="item-meta-right">
+                <div class="item-creation-date"><span class="fa fa-clock-o"></span><span am-time-ago="item.created_time" am-preprocess="unix"></span></div>
+            </div>
+
+        </div>
+
+        <div class="item-media">
+            <img class="img-responsive" ng-src="{{item.images.standard_resolution.url}}" />
+            <div class="caption" ng-show="{{item.caption.text}}">{{item.caption.text}}</div>
+        </div>
+
+        <div>
+            <span><span class="fa fa-heart"></span> {{item.likes.count}}</span>
+            <span><span class="fa fa-comments-o"></span> {{item.comments.count}}</span>
+        </div>
+        <div class="comment" ng-repeat="comment in item.comments.data">
+            <img class="profile-thumbnail img-thumbnail img-thumbnail-small" ng-src="{{comment.from.profile_picture}}" />
+
+            <div class="comment-content">
+                <div class="arrow-left"></div>
+                <div class="item-meta clearfix">
+                    <div class="item-meta-left">
+                        <h6>{{comment.from.full_name}}</h6>
+                    </div>
+
+                    <div class="item-meta-right">
+                        <div class="item-creation-date"><span class="fa fa-clock-o"></span><span am-time-ago="comment.created_time" am-preprocess="unix"></span></div>
+                    </div>
+                </div>
+                <p>{{comment.text}}</p>
+            </div>
+        </div>
+        <hr />
     </div>
 </div>
