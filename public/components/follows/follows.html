@@ -1,0 +1,10 @@
+<div class="list-group">
+    <a ng-href="/#/{{user.id}}/media" class="list-feed-post list-group-item" ng-repeat="user in follows">
+        <div class="media">
+            <img class="img-thumbnail img-thumbnail-small media-object pull-left" width="40" ng-src="{{user.profile_picture}}" image-load />
+            <div class="media-body">
+                <h5>{{user.full_name}}</h5>
+            </div>
+        </div>
+    </a>
+</div>

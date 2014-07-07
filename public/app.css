@@ -421,6 +421,51 @@ hr {
   clip: auto;
 }
 
+#main {
+  overflow-x: hidden;
+}
+
+.col-inner {
+  position: relative;
+}
+
+.col-side.col-left {
+  position: relative;
+}
+@media (min-width: 768px) {
+  .col-side.col-left {
+    position: fixed;
+    background: #fff;
+    height: 100%;
+    top: 52px;
+  }
+}
+
+@media (min-width: 768px) {
+  .col-main {
+    top: 52px;
+    margin-left: 50%;
+  }
+}
+@media (min-width: 992px) {
+  .col-main {
+    margin-left: 50%;
+  }
+}
+@media (min-width: 1200px) {
+  .col-main {
+    margin-left: 33.333%;
+  }
+}
+
+.col-side.col-right {
+  background: #fff;
+  height: 100%;
+  position: fixed;
+  right: 0;
+  top: 52px;
+}
+
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: "Open Sans", sans-serif;
@@ -4712,6 +4757,10 @@ tbody.collapse.in {
   padding: 14px;
 }
 
+.navbar-header {
+  width: 100%;
+}
+
 .navbar-brand {
   background: url("images/logo.png");
   text-indent: -999999em;
@@ -8695,45 +8744,68 @@ button.close {
   height: 280px;
   -webkit-background-size: cover;
   background-size: cover;
-  margin-bottom: 15px;
   background-position: center center;
 }
 
-.profile-basic h4 {
-  font-size: 24px;
-  margin: 0 0 5px 0;
-  color: #fff;
-  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25);
-}
-.profile-basic h5 {
-  font-weight: 300;
-  font-size: 1em;
-  color: #fff;
-  margin: 0;
-  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25);
-}
 .profile-basic .profile-details {
   position: absolute;
   top: 135px;
   width: 100%;
   text-align: center;
   z-index: 2;
+  padding: 0 15px;
+}
+.profile-basic .profile-details h4 {
+  font-size: 24px;
+  margin: 0 0 5px 0;
+  color: #fff;
+  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25);
+}
+.profile-basic .profile-details h5 {
+  font-weight: 300;
+  font-size: 1em;
+  color: #fff;
+  margin: 0;
+  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25);
 }
 .profile-basic .profile-image {
   width: 140px;
   position: absolute;
   left: 50%;
-  margin: -100px 0 0 -70px;
+  margin: -80px 0 0 -70px;
   z-index: 5;
 }
 
-.btn.btn-follow {
-  float: right;
-  margin: 0 15px 0 0;
+.btn-follow {
+  position: absolute;
+  background: none;
+  top: 50px;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-top: 0px solid transparent;
+  border-bottom: 60px solid transparent;
+  border-right: 60px solid #66cccc;
+}
+.btn-follow .fa {
+  color: #fff;
+  position: absolute;
+  left: 38px;
+  top: 12px;
+}
+@media (min-width: 768px) {
+  .btn-follow {
+    top: 0;
+  }
 }
 
-.summary-nav .navbar {
-  margin: 20px 0;
+.summary-nav {
+  margin: 80px 0 20px 0;
+}
+@media (min-width: 768px) {
+  .summary-nav {
+    margin-top: 15px;
+  }
 }
 .summary-nav .navbar ul {
   margin: 0;
@@ -8743,14 +8815,24 @@ button.close {
   float: left;
   width: 33.333%;
 }
+.summary-nav .navbar ul li.active a {
+  background: none;
+  border-color: #66cccc;
+}
+.summary-nav .navbar ul li.active a:hover {
+  background: none;
+  border-color: #66cccc;
+}
 .summary-nav .navbar ul li a {
   text-transform: uppercase;
   display: block;
   text-align: center;
   padding: 15px 0 12px 0;
   font-weight: 300;
-  font-size: 1em;
+  font-size: 0.75em;
   border-bottom: 3px solid #fff;
+  -webkit-transition: border-color 0.25s linear;
+  transition: border-color 0.25s linear;
 }
 .summary-nav .navbar ul li a:before, .summary-nav .navbar ul li a:after {
   content: " ";
@@ -8760,11 +8842,12 @@ button.close {
   clear: both;
 }
 .summary-nav .navbar ul li a:hover {
-  border-color: #66cccc;
+  background: none;
+  border-color: #eeeeee;
 }
 .summary-nav .navbar ul li strong {
   margin-top: 2px;
-  font-size: 1em;
+  font-size: 1.333em;
   clear: both;
   float: left;
   text-align: center;
@@ -8787,15 +8870,31 @@ button.close {
   background: #fff;
   padding: 10px;
   margin-bottom: 20px;
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.1);
 }
 .list-feed .list-feed-post .item-media .caption {
   padding: 10px 0;
+}
+.list-feed .list-feed-post .item-media .social-actions {
+  border-bottom: 1px solid #eeeeee;
+  padding: 10px 0;
+}
+.list-feed .list-feed-post .item-media .social-actions > span {
+  margin-right: 20px;
+  color: #999999;
 }
 .list-feed .list-feed-post .item-meta {
   margin-bottom: 15px;
 }
 .list-feed .list-feed-post .item-meta h5 {
   margin: 0 0 0 50px;
+}
+.list-feed .list-feed-post .item-meta h5 a {
+  color: #605e58;
+}
+.list-feed .list-feed-post .item-meta h5 a:hover {
+  text-decoration: none;
 }
 .list-feed .list-feed-post .item-meta .item-meta-left {
   float: left;

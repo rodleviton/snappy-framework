@@ -4,8 +4,8 @@
         <div class="item-meta clearfix">
 
             <div class="item-meta-left">
-                <a ng-href="/#/{{item.user.id}}/media"><img class="img-thumbnail img-thumbnail-small" width="40" ng-src="{{item.user.profile_picture}}" image-load /></a>
-                <h5><a ng-href="/#/{{item.user.id}}/media">{{item.user.full_name}}</a></h5>
+                <img class="img-thumbnail img-thumbnail-small" width="40" ng-src="{{item.user.profile_picture}}" image-load />
+                <h5>{{item.user.full_name}}</h5>
 
                 <div class="item-location">
                     <span class="fa fa-map-marker map-marker"></span> Eltham, Victoria
@@ -20,7 +20,7 @@
         </div>
 
         <div class="item-media">
-            <img class="img-responsive fade" ng-src="{{item.images.standard_resolution.url}}" image-load />
+            <img class="img-responsive" ng-src="{{item.images.standard_resolution.url}}" />
 
             <div class="social-actions">
                 <span><span class="fa fa-heart"></span> {{item.likes.count}}</span>

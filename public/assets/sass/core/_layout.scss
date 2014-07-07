@@ -1,0 +1,43 @@
+// Base
+#main {
+    overflow-x: hidden;
+}
+
+// Columns
+.col-inner {
+    position: relative;
+}
+
+.col-side.col-left {
+    position: relative;
+
+    @media (min-width: $screen-sm-min) {
+        position: fixed;
+        background: #fff;
+        height: 100%;
+        top: 52px;
+    }
+}
+
+.col-main {
+    @media (min-width: $screen-sm-min) {
+        top: 52px;
+        margin-left: 50%;
+    }
+
+    @media (min-width: $screen-md-min) {
+        margin-left: 50%;
+    }
+
+    @media (min-width: $screen-lg-min) {
+        margin-left: 33.333%;
+    }
+}
+
+.col-side.col-right {
+    background: #fff;
+    height: 100%;
+    position: fixed;
+    right: 0;
+    top: 52px;
+}

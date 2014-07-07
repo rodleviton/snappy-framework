@@ -1,15 +1,15 @@
-<div class="summary-nav col-xs-12">
+<div class="summary-nav">
     <div class="navbar navbar-default" role="navigation">
         <ul class="nav navbar-nav">
-            <li><a href="">
+            <li ng-class="{active:isActive('/' + user.id + '/follows')}"><a ng-href="/#/{{user.id}}/follows">
                 Following
                 <strong>{{user.counts.follows}}</strong>
             </a></li>
-            <li><a href="">
+            <li ng-class="{active:isActive('/' + user.id + '/media')}"><a ng-href="/#/{{user.id}}/media">
                 Snaps
                 <strong>{{user.counts.media}}</strong>
             </a></li>
-            <li><a href="">
+            <li ng-class="{active:isActive('/' + user.id + '/followed-by')}"><a ng-href="/#/{{user.id}}/followed-by">
                 Followers
                 <strong>{{user.counts.followed_by}}</strong>
             </a></li>

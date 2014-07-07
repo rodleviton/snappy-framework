@@ -6,44 +6,56 @@
     <title>Snappy Framework</title>
     <link href="/app.css" rel="stylesheet">
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400italic,400,700,800,300' rel='stylesheet' type='text/css'>
-
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJ3WRsdkt3EJNgmoIAEzohh5V6yEajOIY"></script>
   </head>
   <body ng-app="snappy">
 
     <div class="navbar navbar-fixed-top" role="navigation">
-      <div class="container">
         <div class="navbar-header">
           <a class="navbar-brand" href="#">Snappy</a>
-          <button type="button" class="navbar-toggle">
+          <a href="/#/1387439922/feed" class="navbar-toggle">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-          </button>
+          </a>
 
           <button type="button" class="btn btn-default pull-right btn-icon"><span class="fa fa-cog"></span></button>
         </div>
-      </div>
     </div>
 
-    <div ui-view></div>
+    <div id="main">
+        <div ui-view></div>
+    </div>
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <script src="/bower_components/angular/angular.js"></script>
     <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="/bower_components/momentjs/moment.js"></script>
     <script src="/bower_components/angular-moment/angular-moment.js"></script>
-    <script src="/bower_components/ngStorage/ngStorage.js"></script>
+    <script src="/bower_components/ngstorage/ngStorage.js"></script>
     <script src="/bower_components/jquery.stellar/jquery.stellar.js"></script>
 
     <!-- Snappy Framework -->
     <script src="/app.js"></script>
     <script src="/main/main-controller.js"></script>
+    <script src="/profile/profile-controller.js"></script>
+    <script src="/profile/profile-feed/profile-feed-controller.js"></script>
+    <script src="/profile/profile-media/profile-media-controller.js"></script>
+    <script src="/profile/profile-follows/profile-follows-controller.js"></script>
+    <script src="/profile/profile-followed-by/profile-followed-by-controller.js"></script>
+
+    <!-- Components -->
+    <script src="/components/auth/auth-service.js"></script>
     <script src="/components/profile-masthead/profile-masthead-directive.js"></script>
     <script src="/components/profile-basic/profile-basic-directive.js"></script>
     <script src="/components/profile-basic/profile-basic-service.js"></script>
     <script src="/components/feed/feed-directive.js"></script>
     <script src="/components/feed/feed-service.js"></script>
+    <script src="/components/media/media-service.js"></script>
+    <script src="/components/follows/follows-service.js"></script>
+    <script src="/components/follows/follows-directive.js"></script>
+    <script src="/components/followed-by/followed-by-service.js"></script>
+    <script src="/components/followed-by/followed-by-directive.js"></script>
     <script src="/components/follow-button/follow-button-directive.js"></script>
     <script src="/components/summary-nav/summary-nav-directive.js"></script>
     <script src="/components/geocoder/geocoder-service.js"></script>

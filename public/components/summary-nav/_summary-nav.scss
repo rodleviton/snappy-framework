@@ -1,7 +1,11 @@
 .summary-nav {
-    .navbar {
-        margin: 20px 0;
+     margin: 80px 0 20px 0;
 
+     @media (min-width: $screen-sm-min) {
+        margin-top: 15px;
+     }
+
+    .navbar {
         ul {
             margin: 0;
             width: 100%;
@@ -10,6 +14,18 @@
                 float: left;
                 width: 33.333%;
 
+                &.active {
+                    a {
+                        background: none;
+                        border-color: $brand-primary;
+
+                        &:hover {
+                            background: none;
+                            border-color: $brand-primary;
+                        }
+                    }
+                }
+
                 a {
                     text-transform: uppercase;
                     display: block;
@@ -17,17 +33,19 @@
                     @include clearfix;
                     padding: 15px 0 12px 0;
                     font-weight: 300;
-                    font-size: 1em; // 16px
+                    font-size: 0.75em; // 12px
                     border-bottom: 3px solid #fff;
+                    @include transition(border-color 0.25s linear);
 
                     &:hover {
-                        border-color: $brand-primary;
+                        background: none;
+                        border-color: $gray-lighter;
                     }
                 }
 
                 strong {
                     margin-top: 2px;
-                    font-size: 1em;
+                    font-size: 1.333em; // 16px
                     clear: both;
                     float: left;
                     text-align: center;

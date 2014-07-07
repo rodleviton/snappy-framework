@@ -1,35 +1,35 @@
 .profile-basic {
-
-    // User Name
-    h4 {
-        font-size: ceil(($font-size-base * 1.5)); // ~24px
-        margin: 0 0 5px 0;
-        color: #fff;
-        text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25);
-    }
-
-    // User Byline
-    h5 {
-        font-weight: 300;
-        font-size: 1em; // ~16px
-        color: #fff;
-        margin: 0;
-        text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25);
-    }
-
     .profile-details {
         position: absolute;
         top: 135px;
         width: 100%;
         text-align: center;
         z-index: 2;
+        padding: 0 15px;
+
+        // User Name
+        h4 {
+            font-size: ceil(($font-size-base * 1.5)); // ~24px
+            margin: 0 0 5px 0;
+            color: #fff;
+            text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25);
+        }
+
+        // User Byline
+        h5 {
+            font-weight: 300;
+            font-size: 1em; // ~16px
+            color: #fff;
+            margin: 0;
+            text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25);
+        }
     }
 
     .profile-image {
         width: 140px;
         position: absolute;
         left: 50%;
-        margin: -100px 0 0 -70px;
+        margin: -80px 0 0 -70px;
         z-index: 5;
     }
 }
