@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title>Snappy Framework</title>
+    <link href="/bower_components/animate.css/animate.css" rel="stylesheet">
     <link href="/app.css" rel="stylesheet">
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400italic,400,700,800,300' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJ3WRsdkt3EJNgmoIAEzohh5V6yEajOIY"></script>
@@ -25,15 +26,22 @@
     </div>
 
     <div id="main">
-        <div ui-view></div>
+        <div ui-view class="slide-transition"></div>
     </div>
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-resource/angular-resource.js"></script>
     <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.js"></script>
     <script src="/bower_components/momentjs/moment.js"></script>
     <script src="/bower_components/angular-moment/angular-moment.js"></script>
     <script src="/bower_components/ngstorage/ngStorage.js"></script>
+    <script src="/bower_components/danialfarid-angular-file-upload/dist/angular-file-upload.js"></script>
+    <script src="/bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
+    <script src="/bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
     <script src="/bower_components/jquery.stellar/jquery.stellar.js"></script>
+    <script src="/bower_components/imagesLoaded/imagesloaded.pkgd.js"></script>
+    <script src="/bower_components/packery/dist/packery.pkgd.js"></script>
 
     <!-- Snappy Framework -->
     <script src="/app.js"></script>
@@ -43,12 +51,13 @@
     <script src="/profile/profile-media/profile-media-controller.js"></script>
     <script src="/profile/profile-follows/profile-follows-controller.js"></script>
     <script src="/profile/profile-followed-by/profile-followed-by-controller.js"></script>
+    <script src="/post/post-controller.js"></script>
 
     <!-- Components -->
+    <script src="/components/user-service/user-service.js"></script>
     <script src="/components/auth/auth-service.js"></script>
     <script src="/components/profile-masthead/profile-masthead-directive.js"></script>
     <script src="/components/profile-basic/profile-basic-directive.js"></script>
-    <script src="/components/profile-basic/profile-basic-service.js"></script>
     <script src="/components/feed/feed-directive.js"></script>
     <script src="/components/feed/feed-service.js"></script>
     <script src="/components/media/media-service.js"></script>
@@ -62,5 +71,6 @@
     <script src="/components/geocoder/geocoder-directive.js"></script>
     <script src="/components/parallax/parallax-directive.js"></script>
     <script src="/components/image-load/image-load-directive.js"></script>
+    <script src="/components/isotope/isotope-directive.js"></script>
   </body>
 </html>

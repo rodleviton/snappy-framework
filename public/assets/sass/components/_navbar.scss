@@ -6,6 +6,14 @@
 
      .btn {
         padding: 14px;
+        border: none;
+        border-radius: 0;
+
+        &:focus, &:hover {
+            background: none;
+            border: none;
+            outline: none;
+        }
      }
 }
 
@@ -36,6 +44,7 @@
     @include border-right-radius(0);
     padding: 18px;
     margin: 0;
+    display: block !important;
 
     &:hover {
         background-color: #fff;

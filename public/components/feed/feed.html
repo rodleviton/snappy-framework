@@ -1,10 +1,12 @@
-<div class="list-group list-feed">
-    <div class="list-feed-post list-group-item" ng-repeat="item in feed">
+<div id="feed" class="list-group list-feed isotope-container">
+    <div class="grid-sizer"></div>
+    <div class="gutter-sizer"></div>
+    <div class="list-feed-post list-group-item isotope-item" ng-repeat="item in feed" isotope>
 
         <div class="item-meta clearfix">
 
             <div class="item-meta-left">
-                <a ng-href="/#/{{item.user.id}}/media"><img class="img-thumbnail img-thumbnail-small" width="40" ng-src="{{item.user.profile_picture}}" image-load /></a>
+                <a ng-href="/#/{{item.user.id}}/media"><img class="img-thumbnail img-circle img-thumbnail-small" width="40" ng-src="{{item.user.profile_picture}}" image-load /></a>
                 <h5><a ng-href="/#/{{item.user.id}}/media">{{item.user.full_name}}</a></h5>
 
                 <div class="item-location">
@@ -23,30 +25,42 @@
             <img class="img-responsive fade" ng-src="{{item.images.standard_resolution.url}}" image-load />
 
             <div class="social-actions">
-                <span><span class="fa fa-heart"></span> {{item.likes.count}}</span>
-                <span><span class="fa fa-comments-o"></span> {{item.comments.count}}</span>
+                <span><button class="btn" ng-class="{'active': item.user_has_liked}"><span class="fa fa-heart"></span></button> {{item.likes.count}}</span>
+                <span><button class="btn"><span class="fa fa-comments-o"></span></button> {{item.comments.count}}</span>
             </div>
 
-            <div class="caption">{{item.caption.text}}</div>
+            <div class="caption" ng-show="item.caption.text">{{item.caption.text}}</div>
         </div>
 
-        <div class="comment" ng-repeat="comment in item.comments.data">
-            <img class="profile-thumbnail img-thumbnail img-thumbnail-small" ng-src="{{comment.from.profile_picture}}" />
 
-            <div class="comment-content">
-                <div class="arrow-left"></div>
-                <div class="item-meta clearfix">
-                    <div class="item-meta-left">
-                        <h6>{{comment.from.full_name}}</h6>
-                    </div>
+        <div class="comments-list" ng-show="item.comments.data">
+            <div class="comment" ng-repeat="comment in item.comments.data | limitTo:MAX_COMMENT_COUNT">
+                <img class="profile-thumbnail img-circle img-thumbnail img-thumbnail-small" ng-src="{{comment.from.profile_picture}}" />
 
-                    <div class="item-meta-right">
-                        <div class="item-creation-date"><span class="fa fa-clock-o"></span><span am-time-ago="comment.created_time" am-preprocess="unix"></span></div>
+                <div class="comment-content">
+                    <div class="arrow-left"></div>
+                    <div class="item-meta clearfix">
+                        <div class="item-meta-left">
+                            <h6>{{comment.from.full_name}}</h6>
+                        </div>
+
+                        <div class="item-meta-right">
+                            <div class="item-creation-date"><span class="fa fa-clock-o"></span><span am-time-ago="comment.created_time" am-preprocess="unix"></span></div>
+                        </div>
                     </div>
+                    <p>{{comment.text}}</p>
                 </div>
-                <p>{{comment.text}}</p>
             </div>
         </div>
-        <hr />
+
+        <div class="add-comment clearfix">
+            <form role="form">
+              <div class="form-group">
+                <label class="sr-only" for="quick-comment">Add a comment</label>
+                <input type="text" class="form-control" id="quick-comment" placeholder="Add a comment">
+              </div>
+              <button type="submit" class="btn btn-default pull-right">Send</button>
+            </form>
+        </div>
     </div>
 </div>

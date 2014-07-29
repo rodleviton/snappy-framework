@@ -1,8 +1,5 @@
-snappy.controller('ProfileFollowsController', function ($scope, FollowsService, $stateParams) {
+snappy.controller('ProfileFollowsController', function ($scope, follows) {
     'use strict';
 
-    FollowsService.get($stateParams.id, function success(data){
-        $scope.follows = data;
-    });
-
+    $scope.follows = follows.data;
 });

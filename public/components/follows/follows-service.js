@@ -1,15 +1,12 @@
-snappy.factory("FollowsService", function ($http, ACCESS_TOKEN) {
-    return  {
-        get: function(id, successCallback) {
-            $http.jsonp("https://api.instagram.com/v1/users/" + id + "/follows?access_token=" + ACCESS_TOKEN + "&callback=JSON_CALLBACK").
-                success(function(data, status, headers, config) {
-                    successCallback(data.data, status, headers, config);
-                }).
-                error(function(data, status, headers, config) {
-                    console.log("ERROR: Could not get data.");
-                    // TODO
-                    // Broadcast Error Message
-                });
-        }
-    }
+snappy.factory("FollowsService", function ($resource, ACCESS_TOKEN) {
+    return $resource("https://api.instagram.com/v1/users/" + ":id" + "/follows?access_token=" + ACCESS_TOKEN, { id: '@id'},
+       {
+            get: {
+                method: 'JSONP',
+                params: {
+                    callback: 'JSON_CALLBACK'
+                }
+            }
+       }
+    );
 });

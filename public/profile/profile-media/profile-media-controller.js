@@ -1,8 +1,5 @@
-snappy.controller('ProfileMediaController', function ($scope, MediaService, $stateParams) {
+snappy.controller('ProfileMediaController', function ($scope, media) {
     'use strict';
 
-    MediaService.get($stateParams.id, function success(data){
-        $scope.feed = data;
-    });
-
+    $scope.feed = media.data;
 });

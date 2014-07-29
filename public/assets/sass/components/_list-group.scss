@@ -1,12 +1,1 @@
 @import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/list-group";
-
-.list-group {
-    &.list-feed {
-        .list-group-item {
-            background: none;
-            border: none;
-            @include border-left-radius(0);
-            @include border-right-radius(0);
-        }
-    }
-}

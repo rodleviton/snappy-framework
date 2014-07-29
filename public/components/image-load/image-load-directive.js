@@ -3,7 +3,8 @@ snappy.directive('imageLoad', function() {
        restrict: 'A',
        link: function(scope, element, attrs) {
            element.bind('load', function() {
-              element.addClass('in');
+              scope.$broadcast("imageLoaded"); // Let the app know when an image has been loaded
+              element.addClass('in'); // Fade the image in using CSS
            });
        }
    }

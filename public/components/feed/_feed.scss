@@ -2,7 +2,12 @@
 
     .list-feed-post {
         width: 100%;
-        padding: 10px 0;
+        float: left;
+        border-radius: $border-radius-base;
+        background: #fff;
+        margin-bottom: 20px;
+        padding: 0;
+        @include box-shadow(0px 0px 8px 0px rgba(0, 0, 0, .1));
 
         hr {
             border-top: 1px solid #fff;
@@ -14,18 +19,40 @@
         }
 
         .item-media {
-            background: #fff;
-            padding: 10px;
-            margin-bottom: 20px;
-            @include box-shadow(0px 0px 8px 0px rgba(0, 0, 0, .1));
+
+            img {
+                border-radius: 4px;
+                padding: 10px;
+            }
 
             .caption {
-                padding: 10px 0;
+                padding: 10px;
+                border-bottom: 1px solid $gray-lighter;
+                font-style: italic;
             }
 
             .social-actions {
                 border-bottom: 1px solid $gray-lighter;
-                padding: 10px 0;
+                padding: 0 10px 10px 10px;
+
+                .btn {
+                    border: 1px solid $gray-lighter;
+                    background: #fff;
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+
+                .btn.active {
+                    color: $brand-primary;
+                    background: #fff;
+                    @include box-shadow(none);
+
+                    &:active {
+                        @include box-shadow(inset 0 3px 5px rgba(0, 0, 0, 0.125));
+                    }
+                }
 
                 > span {
                     margin-right: 20px;
@@ -36,7 +63,7 @@
 
         // Meta
         .item-meta {
-            margin-bottom: 15px;
+            padding: 10px;
 
             h5 {
                 margin: 0 0 0 50px;
@@ -85,6 +112,25 @@
         }
 
         // Comments
+        .comments-list {
+            padding: 20px 10px 10px 10px;
+        }
+
+        .comment-header {
+            padding: 10px;
+
+            a {
+                color: $gray-dark;
+                font-weight: 700;
+                text-decoration: none;
+                font-size: 0.85em;
+                display: block;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
         .comment {
             width: 100%;
             margin-bottom: 10px;
@@ -107,6 +153,7 @@
             .comment-content {
                 position: relative;
                 background: $brand-primary;
+                border-radius: $border-radius-base;
                 padding: 10px;
                 color: #fff;
                 margin-left: 60px;
@@ -127,5 +174,19 @@
                 width: 40px;
             }
         }
+
+        .add-comment {
+            padding: 20px 10px 10px 10px;
+            border-top: 1px solid $gray-lighter;
+        }
+    }
+
+    // Isotope
+    .gutter-sizer  { width: 0; }
+    .grid-sizer, .list-feed-post { width: 100%; }
+
+    @media (min-width: $screen-lg-min) {
+        .gutter-sizer  { width: 2%; }
+        .grid-sizer, .list-feed-post  { width: 49%; }
     }
 }

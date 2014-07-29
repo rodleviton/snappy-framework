@@ -1,11 +1,8 @@
-snappy.controller('ProfileFeedController', function ($scope, FeedService, $stateParams) {
+snappy.controller('ProfileFeedController', function ($scope, feed) {
     'use strict';
+    $scope.MAX_COMMENT_COUNT = 4;
 
-    if ( parseInt($scope.$storage.user_id, 10) === parseInt($stateParams.id, 10) ) {
-        FeedService.get('self', function success(data){
-            $scope.feed = data;
-        });
-    } else {
-        console.log('Not authenticated user profile');
-    }
+    $scope.feed = feed.data;
+
+    console.log($scope.feed);
 });
